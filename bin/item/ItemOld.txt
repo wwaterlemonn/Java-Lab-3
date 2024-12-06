@@ -1,0 +1,32 @@
+package item;
+
+public class Item{
+    private int volume;
+    private String name;
+    private Storage curStorage;
+    
+    public Item(int volume, String name, Storage storage){
+        this.volume = volume;
+        this.name = name;
+        storage.add(this);
+        this.curStorage = storage;
+    }
+
+    public int getVolume(){
+        return this.volume;
+    }
+    
+    public String getName(){
+        return this.name;
+    }
+
+    public Storage getCurStorage(){
+        return this.curStorage;
+    }
+
+    public void moveTo(Storage newStorage){
+        this.curStorage.remove(this);
+        this.curStorage = newStorage;
+        newStorage.add(this);
+    }
+}
