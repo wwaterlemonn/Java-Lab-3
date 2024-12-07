@@ -1,8 +1,10 @@
 package item;
 
-public record Item(int volume, String name){
-    public Item(int volume, String name, Storage storage){
-        this(volume, name);
-        storage.add(this);
+public interface Item {
+    String name();
+    int volume();
+    default void move(Storage oldStorage, Storage newStorage){
+        oldStorage.remove(this);
+        newStorage.add(this);
     }
 }
