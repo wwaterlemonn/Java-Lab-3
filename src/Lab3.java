@@ -1,15 +1,16 @@
 import item.Storage;
 import item.SmallStorage;
+import creature.HealthyPerson;
+import creature.Person;
 import item.Item;
-import person.Person;
 import type.Mood;
 
 public class Lab3 {
     public static void main(String[] args){
         Storage ground = new Storage("Земля");
         SmallStorage pot = new SmallStorage(8, "Горшочек");
-        Person karlson = new Person("Карлсон", Mood.ANGRY);
-        Person malish = new Person("Малыш", Mood.CONFUSED);
+        Person karlson = new HealthyPerson("Карлсон", Mood.ANGRY);
+        Person malish = new HealthyPerson("Малыш", Mood.CONFUSED);
         Item bone = new Item(1, "Косточка", karlson.hands());
         Item dirt1 = new Item(2, "1-я куча земли", pot);
 
