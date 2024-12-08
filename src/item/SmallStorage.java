@@ -14,21 +14,10 @@ public class SmallStorage extends Storage{
         return this.capacity;
     }
 
-    protected void checkEnoughSpace(Item item) throws SSOverfillException{
-        if ((this.capacity() - this.fill()) < item.volume()){
-            //System.out.print(item.name() + " не влез в " + this.name() + ". ");
-            //return;
-            throw new SSOverfillException(item.name() + " не влез в " + this.name() + ". ");
-        }
-    }
-
     @Override
     protected void add(Item item){
         try{
-            //checkEnoughSpace(item);
             if ((this.capacity() - this.fill()) < item.volume()){
-                //System.out.print(item.name() + " не влез в " + this.name() + ". ");
-                //return;
                 throw new SSOverfillException(item.name() + " не влез в " + this.name() + ". ");
             }
             super.add(item);

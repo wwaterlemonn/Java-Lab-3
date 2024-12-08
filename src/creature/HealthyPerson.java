@@ -43,13 +43,13 @@ public class HealthyPerson extends Person implements Manipulator{
                 System.out.print(this.name() + " спокоен. ");
                 break;
             case HAPPY:
-                System.out.print(this.name() + " полон радости. ");
+                System.out.print(this.name() + " счастлив. ");
                 break;
             case ANGRY:
-                System.out.print(this.name() + " в настроении спорить. ");
+                System.out.print(this.name() + " злится. ");
                 break;
             case CONFUSED:
-                System.out.print(this.name() + " не знает, что ответить. ");
+                System.out.print(this.name() + " в замешательстве. ");
                 break;
         }
     }

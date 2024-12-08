@@ -2,7 +2,8 @@ import item.Storage;
 import item.Trinket;
 import mytype.Mood;
 import item.SmallStorage;
-import creature.HealthyPerson;
+import creature.Karlson;
+import creature.Malish;
 import item.Dirt;
 import item.Item;
 
@@ -10,8 +11,8 @@ public class Lab3 {
     public static void main(String[] args){
         Storage ground = new Storage("Земля");
         SmallStorage pot = new SmallStorage(8, "Горшочек");
-        HealthyPerson karlson = new HealthyPerson("Карлсон", Mood.ANGRY);
-        HealthyPerson malish = new HealthyPerson("Малыш", Mood.CONFUSED);
+        Karlson karlson = new Karlson();
+        Malish malish = new Malish();
         Item bone = new Trinket(1, "Косточка", karlson.hands());
         Item dirt1 = new Dirt(pot);
 
@@ -21,7 +22,7 @@ public class Lab3 {
             karlson.pickUp(dirt, ground);
             karlson.putInto(dirt, pot);
         }
-        karlson.pickUp(dirt1, ground);
+        karlson.pickUp(dirt1, ground); //тест исключения в Storage.add()
         pot.printItems();
         pot.printFill();
 

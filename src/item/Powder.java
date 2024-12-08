@@ -1,6 +1,6 @@
 package item;
 
-public class Powder implements Item{
+public abstract class Powder implements Item{
     private int volume;
     private final String name;
     private final double lossCof;
