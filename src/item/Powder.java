@@ -27,7 +27,7 @@ public class Powder implements Item{
     }
     public Powder(String name, int volume, double lossCof, Storage storage){
         this.name = name;
-        this.volume = 1;
+        this.volume = volume;
         this.lossCof = lossCof;
         storage.add(this);
     }

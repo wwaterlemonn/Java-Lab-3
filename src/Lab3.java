@@ -1,10 +1,10 @@
 import item.Storage;
 import item.Trinket;
+import mytype.Mood;
 import item.SmallStorage;
 import creature.HealthyPerson;
 import item.Dirt;
 import item.Item;
-import type.Mood;
 
 public class Lab3 {
     public static void main(String[] args){
@@ -21,6 +21,7 @@ public class Lab3 {
             karlson.pickUp(dirt, ground);
             karlson.putInto(dirt, pot);
         }
+        karlson.pickUp(dirt1, ground);
         pot.printItems();
         pot.printFill();
 

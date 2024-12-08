@@ -1,5 +1,7 @@
 package item;
 
+import myexception.SSOverfillException;
+
 public class SmallStorage extends Storage{
     private int capacity;
 
@@ -12,13 +14,29 @@ public class SmallStorage extends Storage{
         return this.capacity;
     }
 
-    @Override
-    public void add(Item item){
+    protected void checkEnoughSpace(Item item) throws SSOverfillException{
         if ((this.capacity() - this.fill()) < item.volume()){
-            System.out.print(item.name() + " не влез в " + this.name() + ". ");
+            //System.out.print(item.name() + " не влез в " + this.name() + ". ");
+            //return;
+            throw new SSOverfillException(item.name() + " не влез в " + this.name() + ". ");
+        }
+    }
+
+    @Override
+    protected void add(Item item){
+        try{
+            //checkEnoughSpace(item);
+            if ((this.capacity() - this.fill()) < item.volume()){
+                //System.out.print(item.name() + " не влез в " + this.name() + ". ");
+                //return;
+                throw new SSOverfillException(item.name() + " не влез в " + this.name() + ". ");
+            }
+            super.add(item);
+        }
+        catch (SSOverfillException e){
+            System.err.print(e.toString());
             return;
         }
-        super.add(item);
     }
 
     @Override

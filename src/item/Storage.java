@@ -38,15 +38,20 @@ public class Storage{
     public void printFill(){
         System.out.print(this.name() + " заполнен на " + this.fill() + ". ");
     }
-    public void remove(Item item){
-        if (!this.contents.remove(item)){
-            System.out.print(item.name() + " не было в " + this.name() + ". ");
+    protected void remove(Item item){
+        try{
+            if (!this.contents.remove(item)){
+                throw new IllegalArgumentException(item.name() + " не было в " + this.name() + ". ");
+            }
+            this.fill -= item.volume();
+        }
+        catch(IllegalArgumentException e){
+            System.out.print("IllegalArgumentException: " + e.getMessage());
             return;
         }
-        this.fill -= item.volume();
     }
 
-    public void add(Item item){
+    protected void add(Item item){
         this.contents.add(item);
         this.fill += item.volume();
     }

@@ -3,7 +3,7 @@ package creature;
 import item.Item;
 import item.SmallStorage;
 import item.Storage;
-import type.Mood;
+import mytype.Mood;
 
 public class HealthyPerson extends Person implements Manipulator{
     private SmallStorage hands = new SmallStorage(2, "Руки");
@@ -25,14 +25,32 @@ public class HealthyPerson extends Person implements Manipulator{
     }
 
     public void pickUp(Item item, Storage storage){
-        storage.remove(item);
-        this.hands.add(item);
-        System.out.print(this.name() + " подобрал " + item.name() + ". ");
+        System.out.print(this.name() + " подобрал " + item.name() + " из " + storage.name() + ". ");
+        item.move(storage, this.hands);
     }
 
     public void putInto(Item item, Storage storage){
         System.out.print(this.name() + " положил " + item.name() + " в " + storage.name() + ". ");
-        this.hands.remove(item);
-        storage.add(item);
+        item.move(this.hands(), storage);
+    }
+
+    public void printMood(){
+        switch(this.mood()){
+            case SAD:
+                System.out.print(this.name() + " опечален. ");
+                break;
+            case CALM:
+                System.out.print(this.name() + " спокоен. ");
+                break;
+            case HAPPY:
+                System.out.print(this.name() + " полон радости. ");
+                break;
+            case ANGRY:
+                System.out.print(this.name() + " в настроении спорить. ");
+                break;
+            case CONFUSED:
+                System.out.print(this.name() + " не знает, что ответить. ");
+                break;
+        }
     }
 }

@@ -1,8 +1,8 @@
 package creature;
 
-import type.Mood;
+import mytype.Mood;
 
-public class Person implements Animal, Emotional{
+public abstract class Person implements Animal, Emotional{
     private String name;
     private Mood mood;
 
@@ -38,25 +38,5 @@ public class Person implements Animal, Emotional{
         System.out.print("Настроение у " + this.name + " поменялось. ");
     }
 
-
-
-    public void printMood(){
-        switch(this.mood){
-            case SAD:
-                System.out.print(this.name + " опечален. ");
-                break;
-            case CALM:
-                System.out.print(this.name + " спокоен. ");
-                break;
-            case HAPPY:
-                System.out.print(this.name + " полон радости. ");
-                break;
-            case ANGRY:
-                System.out.print(this.name + " в настроении спорить. ");
-                break;
-            case CONFUSED:
-                System.out.print(this.name + " не знает, что ответить. ");
-                break;
-        }
-    }    
+    public abstract void printMood(); 
 }
