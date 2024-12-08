@@ -27,4 +27,11 @@ public class Karlson extends HealthyPerson {
                 break;
         }
     }
+
+    @Override
+    public String toString() {
+        return "Karlson [hands: " + hands().toString() + ", name()=" + name() + ", mood()=" + mood() + "]";
+    }
+
+    //hashCode и equals нет смысла переопределять, класс только устанавливает конкретные значения полей и не добавляет нового
 }

@@ -2,8 +2,11 @@ import item.Storage;
 import item.Trinket;
 import mytype.Mood;
 import item.SmallStorage;
+import creature.Animal;
+import creature.HealthyPerson;
 import creature.Karlson;
 import creature.Malish;
+import creature.Person;
 import item.Dirt;
 import item.Item;
 
@@ -23,8 +26,7 @@ public class Lab3 {
             karlson.putInto(dirt, pot);
         }
         karlson.pickUp(dirt1, ground); //тест исключения в Storage.add()
-        pot.printItems();
-        pot.printFill();
+        System.out.print(pot.itemsToString() + pot.fillToString());
 
         malish.printMood();
 

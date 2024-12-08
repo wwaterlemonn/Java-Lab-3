@@ -53,4 +53,34 @@ public class HealthyPerson extends Person implements Manipulator{
                 break;
         }
     }
+
+    @Override
+    public String toString() {
+        return "HealthyPerson [hands: " + hands.toString() + ", name()=" + name() + ", mood()=" + mood() + "]";
+    }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int result = super.hashCode();
+        result = prime * result + ((hands == null) ? 0 : hands.hashCode());
+        return result;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (!super.equals(obj))
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        HealthyPerson other = (HealthyPerson) obj;
+        if (hands == null) {
+            if (other.hands != null)
+                return false;
+        } else if (!hands.equals(other.hands))
+            return false;
+        return true;
+    }
 }

@@ -27,16 +27,21 @@ public class Storage{
         return contents;
     }
 
-    public void printItems(){
-        System.out.print(this.name + " содержит " + contents.get(0).name());
-        for (Item item: contents.subList(1, contents.size())){
-            System.out.print(", " + item.name());
+    public String itemsToString(){
+        if (contents.size()==0){
+            return this.name() + " пуст.";
         }
-        System.out.print(". ");
+        String s = "";
+        s += (this.name + " содержит " + contents.get(0).name());
+        for (Item item: contents.subList(1, contents.size())){
+            s += (", " + item.name());
+        }
+        s += (". ");
+        return s;
     }
 
-    public void printFill(){
-        System.out.print(this.name() + " заполнен на " + this.fill() + ". ");
+    public String fillToString(){
+        return (this.name() + " заполнен на " + this.fill() + ". ");
     }
     protected void remove(Item item){
         try{
@@ -88,5 +93,10 @@ public class Storage{
         } else if (!contents.equals(other.contents))
             return false;
         return true;
+    }
+
+    @Override
+    public String toString() {
+        return "Storage [name=" + name + "; " + this.itemsToString() +"; " + this.fillToString() +"]";
     }
 }

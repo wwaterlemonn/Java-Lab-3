@@ -5,4 +5,6 @@ public record Trinket(int volume, String name) implements Item{
         this(volume, name);
         storage.add(this);
     }
+
+    //record сам переопределяет hashCode, equals, toString
 }

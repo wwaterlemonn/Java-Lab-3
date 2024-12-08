@@ -27,4 +27,11 @@ public class Dirt extends Powder{
         super(name, volume, 0.1, storage);
         id ++;
     }
+
+    @Override
+    public String toString() {
+        return "Dirt [volume=" + volume() + ", name=" + name() + ", lossCof=" + lossCof() + "]";
+    }
+
+    //hashCode и equals нет смысла переопределять, класс только устанавливает конкретные значения полей и не добавляет нового
 }

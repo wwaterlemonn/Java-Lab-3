@@ -27,4 +27,11 @@ public class Malish extends HealthyPerson {
                 break;
         }
     }
+
+    @Override
+    public String toString() {
+        return "Malish [hands: " + hands().toString() + ", name()=" + name() + ", mood()=" + mood() + "]";
+    }
+
+    //hashCode и equals нет смысла переопределять, класс только устанавливает конкретные значения полей и не добавляет нового
 }
