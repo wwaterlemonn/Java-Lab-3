@@ -4,7 +4,8 @@ import mytype.Mood;
 
 public class Malish extends HealthyPerson {
     public Malish(){
-        super("Малыш", Mood.CONFUSED);
+        //super("Малыш", Mood.CONFUSED);
+        super("Малыш", Mood.randomMood());
     }
 
     @Override

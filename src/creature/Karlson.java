@@ -4,7 +4,8 @@ import mytype.Mood;
 
 public class Karlson extends HealthyPerson {
     public Karlson(){
-        super("Карлсон", Mood.ANGRY);
+        //super("Карлсон", Mood.ANGRY);
+        super("Карлсон", Mood.randomMood());
     }
 
     @Override

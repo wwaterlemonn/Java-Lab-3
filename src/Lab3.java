@@ -2,21 +2,22 @@ import item.Storage;
 import item.Trinket;
 import mytype.Mood;
 import item.SmallStorage;
-import creature.Animal;
-import creature.HealthyPerson;
 import creature.Karlson;
 import creature.Malish;
-import creature.Person;
 import item.Dirt;
 import item.Item;
+import java.util.Random;
 
 public class Lab3 {
     public static void main(String[] args){
+        Random r = new Random();
         Storage ground = new Storage("Земля");
-        SmallStorage pot = new SmallStorage(8, "Горшочек");
+        //SmallStorage pot = new SmallStorage(8, "Горшочек");
+        SmallStorage pot = new SmallStorage(r.nextInt(8,18), "Горшочек");
         Karlson karlson = new Karlson();
         Malish malish = new Malish();
-        Item bone = new Trinket(1, "Косточка", karlson.hands());
+        //Item bone = new Trinket(1, "Косточка", karlson.hands());
+        Item bone = new Trinket(r.nextInt(1,4), "Косточка", karlson.hands());
         Item dirt1 = new Dirt(pot);
 
         karlson.putInto(bone, pot);
