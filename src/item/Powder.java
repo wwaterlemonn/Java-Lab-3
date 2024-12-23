@@ -80,6 +80,7 @@ public abstract class Powder implements Item{
             return false;
         return true;
     }
+    
     @Override
     public String toString() {
         return "Powder [volume=" + volume + ", name=" + name + ", lossCof=" + lossCof + "]";

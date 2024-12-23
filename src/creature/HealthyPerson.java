@@ -54,6 +54,20 @@ public class HealthyPerson extends Person implements Manipulator{
         }
     }
 
+    public void makeNoise(String msg, int volume){
+        class Noise{
+            private String msg;
+            private int volume;
+
+            public Noise(String msg, int volume){
+                this.msg = msg;
+                this.volume = volume;
+            }
+        }
+        Noise noise = new Noise(msg, volume);
+        System.out.print(this.name() + " издал звук: " + noise.msg + "; громкостью " + noise.volume + " Дб. ");
+    }
+
     @Override
     public String toString() {
         return "HealthyPerson [hands: " + hands.toString() + ", name()=" + name() + ", mood()=" + mood() + "]";

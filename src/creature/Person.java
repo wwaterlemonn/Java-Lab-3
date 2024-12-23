@@ -21,9 +21,7 @@ public abstract class Person implements Animal, Emotional{
         this.mood = mood;
     }
 
-    public void makeNoise(String noise){
-        System.out.print(this.name + " издал звук: " + noise + ". ");
-    }
+    public abstract void makeNoise(String msg, int volume);
 
     public String name(){
         return this.name;

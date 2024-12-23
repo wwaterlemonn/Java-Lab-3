@@ -1,5 +1,5 @@
 package creature;
 
 public interface Animal {
-    void makeNoise(String noise);
+    void makeNoise(String msg, int volume);
 }

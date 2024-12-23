@@ -1,0 +1,2 @@
+Main-Class: Lab3
+Class-Path: bin/creature/ bin/item/ bin/mytype/ bin/myexception bin/

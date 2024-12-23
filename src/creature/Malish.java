@@ -24,7 +24,20 @@ public class Malish extends HealthyPerson {
                 System.out.print(this.name() + " дуется. ");
                 break;
             case CONFUSED:
+            Emotional thought = new Emotional(){
+                private Mood mood = Mood.CONFUSED;
+                private String msg = "Что он делает?";
+
+                public Mood mood(){
+                    return this.mood;
+                }
+
+                public void printMood(){
+                    System.out.print("Малыш подумал: " + this.msg + " ");
+                }
+            };
                 System.out.print(this.name() + " не знает, что сказать. ");
+                thought.printMood();
                 break;
         }
     }

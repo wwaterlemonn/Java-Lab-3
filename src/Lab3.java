@@ -34,6 +34,6 @@ public class Lab3 {
         karlson.printMood();
         karlson.setMood(Mood.HAPPY);
         karlson.printMood();
-        karlson.makeNoise("кудахтанье");
+        karlson.makeNoise("кудахтанье", 36);
     }
 }

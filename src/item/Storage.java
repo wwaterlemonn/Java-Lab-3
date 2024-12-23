@@ -43,15 +43,36 @@ public class Storage{
     public String fillToString(){
         return (this.name() + " заполнен на " + this.fill() + ". ");
     }
+
+    public class NoSuchItemException extends IllegalArgumentException{
+        public NoSuchItemException(){
+            super("No such item found in the Storage object");
+        }
+    
+        public NoSuchItemException(String message){
+            super(message);
+        }
+    
+        @Override
+        public String getMessage(){
+            return super.getMessage();
+        }
+    
+        @Override
+        public String toString(){
+            return "NoSuchItemException: " + this.getLocalizedMessage();
+        }
+    }
+
     protected void remove(Item item){
         try{
             if (!this.contents.remove(item)){
-                throw new IllegalArgumentException(item.name() + " не было в " + this.name() + ". ");
+                throw new NoSuchItemException(item.name() + " не было в " + this.name() + ". ");
             }
             this.fill -= item.volume();
         }
-        catch(IllegalArgumentException e){
-            System.out.print("IllegalArgumentException: " + e.getMessage());
+        catch(NoSuchItemException e){
+            System.out.print(e.toString());
             return;
         }
     }
